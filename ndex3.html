@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About Us — Stylish Company</title>
+  <style>
+    :root{
+      --bg:#071021; --card:#0b1220; --muted:#97a0b8; --accent:#7c5cff; --accent2:#45d7ff; --glass:rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#e6eef8;background:linear-gradient(180deg,#071021 0%, #0b1220 60%)}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid var(--glass);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#071021;font-weight:800}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover{color:#fff;background:var(--glass);transform:translateY(-2px)}
+
+    main{max-width:1100px;margin:36px auto;padding:0 16px}
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:12px;border:1px solid var(--glass);display:flex;gap:24px;align-items:center}
+    .hero h1{margin:0 0 6px;color:#fff}
+    .hero p{margin:0;color:var(--muted)}
+
+    .two{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid var(--glass)}
+
+    .mission h3{margin-top:0;color:#fff}
+    .values{display:flex;gap:12px;margin-top:12px}
+    .value{flex:1;padding:12px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02);text-align:center}
+    .value strong{display:block;color:#fff;margin-bottom:6px}
+    .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+    .member{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02);display:flex;gap:12px;align-items:center;transition:transform .16s ease}
+    .member:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(2,6,23,0.5)}
+    .avatar{width:56px;height:56px;border-radius:10px;background:var(--glass);flex-shrink:0}
+    .member h4{margin:0 0 4px;color:#fff}
+    .member small{color:var(--muted)}
+
+    .timeline{margin-top:18px}
+    .step{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);background:transparent;margin-bottom:10px}
+    .step .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px}
+
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#071021}
+    .btn-ghost{background:transparent;border:1px solid var(--glass);color:var(--muted)}
+
+    footer{margin-top:28px;color:var(--muted);text-align:center}
+
+    @media (max-width:880px){
+      .two{grid-template-columns:1fr}
+      .hero{flex-direction:column}
+    }
+
+    /* small screens */
+    @media (max-width:600px){
+      main{padding:0 12px}
+      .hero{padding:20px}
+      .card{padding:14px}
+      .team-grid{grid-template-columns:1fr}
+      .cta{flex-direction:column}
+      .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">US</div>
+      <div>
+        <div style="font-weight:700;color:#fff">Stylish Company</div>
+        <div style="font-size:12px;color:var(--muted)">Design · Build · Ship</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index2.html">Product</a>
+      <a href="index1.html">Support</a>
+      <a href="ndex5.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div style="flex:1">
+        <h1>We're a small team solving big problems</h1>
+        <p class="lead">We craft thoughtful products and delightful experiences — built with design, performance, and reliability in mind.</p>
+
+        <div class="cta">
+          <button class="btn btn-primary" onclick="contact()">Contact us</button>
+          <button class="btn btn-ghost" onclick="careers()">See careers</button>
+        </div>
+      </div>
+      <aside style="width:320px" class="card">
+        <strong style="display:block;color:#fff">Snapshot</strong>
+        <div style="color:var(--muted);margin-top:8px">Founded 2019 • Remote-first • 28 team members</div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <div style="flex:1;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01);text-align:center"><strong style="color:var(--accent)">99.99%</strong><div style="color:var(--muted);font-size:13px">Uptime</div></div>
+          <div style="flex:1;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01);text-align:center"><strong style="color:var(--accent)">4.9</strong><div style="color:var(--muted);font-size:13px">Avg rating</div></div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="two">
+      <div>
+        <div class="card mission">
+          <h3>Our mission</h3>
+          <p style="color:var(--muted)">To empower teams with simple, powerful tools that help them focus on what matters: building great products and serving their customers.</p>
+
+          <div class="values">
+            <div class="value"><strong>Clarity</strong><span style="color:var(--muted)">Clear communication & simple UI</span></div>
+            <div class="value"><strong>Reliability</strong><span style="color:var(--muted)">Infrastructure & uptime focused</span></div>
+            <div class="value"><strong>Speed</strong><span style="color:var(--muted)">Fast iterations & delivery</span></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3 style="margin-top:0;color:#fff">Meet the team</h3>
+          <div class="team-grid">
+            <div class="member">
+              <div class="avatar"></div>
+              <div>
+                <h4>Alex Morgan</h4>
+                <small>CEO &amp; Product</small>
+              </div>
+            </div>
+
+            <div class="member">
+              <div class="avatar"></div>
+              <div>
+                <h4>Sana Patel</h4>
+                <small>Design Lead</small>
+              </div>
+            </div>
+
+            <div class="member">
+              <div class="avatar"></div>
+              <div>
+                <h4>Daniel Cho</h4>
+                <small>Engineering</small>
+              </div>
+            </div>
+
+            <div class="member">
+              <div class="avatar"></div>
+              <div>
+                <h4>Rita Gomez</h4>
+                <small>Support</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card timeline" style="margin-top:14px">
+          <h3 style="margin-top:0;color:#fff">Our journey</h3>
+          <div class="step"><div class="dot"></div><div><strong>2019</strong><div style="color:var(--muted)">Company founded by two friends who wanted simpler tools.</div></div></div>
+          <div class="step"><div class="dot"></div><div><strong>2020</strong><div style="color:var(--muted)">First public beta and initial customers.</div></div></div>
+          <div class="step"><div class="dot"></div><div><strong>2023</strong><div style="color:var(--muted)">Reached 10k users and expanded the team.</div></div></div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0;color:#fff">Values & culture</h3>
+          <p style="color:var(--muted)">We value empathy, continuous learning, and remote collaboration. We run lightweight processes and trust teams to own outcomes.</p>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <h3 style="margin-top:0;color:#fff">Open roles</h3>
+          <ul style="margin:10px 0 0;padding-left:18px;color:var(--muted)">
+            <li>Senior Frontend Engineer</li>
+            <li>Product Designer</li>
+            <li>Customer Success Manager</li>
+          </ul>
+          <div style="margin-top:12px"><button class="btn btn-primary" onclick="careers()">View all jobs</button></div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 Stylish Company • Built with care
+    </footer>
+  </main>
+
+  <script>
+    function contact(){ alert('Contact demo — open your preferred contact method') }
+    function careers(){ alert('Careers demo — open jobs page') }
+  </script>
+</body>
+</html>

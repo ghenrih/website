@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ghenri</title>
+  <style>
+    :root{
+      --bg:#071021; --card:#0b1220; --muted:#97a0b8; --accent:#7c5cff; --accent2:#45d7ff; --glass:rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#e6eef8;background:linear-gradient(180deg,#071021 0%, #0b1220 60%)}
+
+    .app{
+      display:flex;min-height:100vh;align-items:stretch;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width:78px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-right:1px solid var(--glass);padding:18px 10px;display:flex;flex-direction:column;align-items:center;gap:14px;transition:width .25s ease;overflow:visible
+    }
+    .sidebar:hover{width:180px}
+
+    .brand{display:flex;align-items:center;gap:12px;width:100%;padding:6px 8px;border-radius:10px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:inline-flex;align-items:center;justify-content:center;color:#071021;font-weight:800}
+    .brand-text{display:none;color:#fff;font-weight:700}
+    .sidebar:hover .brand-text{display:block}
+
+    .nav{
+      display:flex;flex-direction:column;gap:10px;width:100%;align-items:center
+    }
+    .nav-button{
+      width:60px;height:60px;border-radius:12px;background:transparent;border:1px solid var(--glass);display:flex;align-items:center;justify-content:center;color:var(--muted);cursor:pointer;transition:all .18s ease;transform-origin:center top;overflow:hidden;padding:6px
+    }
+    .sidebar:hover .nav-button{width:100%;justify-content:flex-start;padding-left:12px}
+    .nav-button:hover{background:rgba(255,255,255,0.02);color:#fff;transform:translateY(-4px)}
+    .nav-button:active{transform:scaleY(1.12)}
+
+    .nav-button .label{display:none;margin-left:10px;font-weight:600}
+    .sidebar:hover .nav-button .label{display:inline-block}
+
+    .content{flex:1;padding:36px;}
+    .card{max-width:900px;margin:0 auto;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.6);border:1px solid var(--glass)}
+
+    h1{margin:0 0 8px;color:#fff}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    @media (max-width:680px){
+      .sidebar{position:fixed;bottom:12px;left:12px;width:auto;padding:8px;border-radius:12px}
+      .sidebar:hover{width:auto}
+      .sidebar .brand-text,.nav-button .label{display:none!important}
+      .content{padding:20px}
+    }
+
+    /* Extra small screens: turn sidebar into bottom navigation */
+    @media (max-width:480px){
+      .sidebar{position:fixed;left:12px;right:12px;bottom:12px;padding:8px;border-radius:12px;height:auto;display:flex;flex-direction:row;align-items:center;gap:8px}
+      .sidebar .brand{display:none}
+      .nav{flex-direction:row;width:100%;justify-content:space-between;align-items:center}
+      .nav-button{width:48px;height:48px;border-radius:10px;padding:6px}
+      .nav-button .label{display:none}
+      .content{padding:16px}
+      .card{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <div class="logo">SP</div>
+        <div class="brand-text">ghenri</div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-button" onclick="window.open('file:///C:/Users/ghenri.rotaru/Desktop/Neuer%20Ordner/index1.html','_self')">
+          <span style="width:28px;height:28px;display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:6px"></span>
+          <span class="label">Home</span>
+        </button>
+
+        <button class="nav-button" onclick="window.open('file:///C:/Users/ghenri.rotaru/Desktop/Neuer%20Ordner/index2.html','_self')">
+          <span style="width:28px;height:28px;display:inline-block;background:#8bd3ff;border-radius:6px"></span>
+          <span class="label">About</span>
+        </button>
+
+        <button class="nav-button" onclick="window.open('file:///C:/Users/ghenri.rotaru/Desktop/Neuer%20Ordner/ndex3.html','_self')">
+          <span style="width:28px;height:28px;display:inline-block;background:#ffd18b;border-radius:6px"></span>
+          <span class="label">Services</span>
+        </button>
+
+        <button class="nav-button" onclick="window.open('file:///C:/Users/ghenri.rotaru/Desktop/Neuer%20Ordner/ndex4.html','_self')">
+          <span style="width:28px;height:28px;display:inline-block;background:#b58cff;border-radius:6px"></span>
+          <span class="label">Contact</span>
+        </button>
+
+        <button class="nav-button" onclick="window.open('file:///C:/Users/ghenri.rotaru/Desktop/Neuer%20Ordner/ndex5.html','_self')">
+          <span style="width:28px;height:28px;display:inline-block;background:#7cffb8;border-radius:6px"></span>
+          <span class="label">Login</span>
+        </button>
+      </nav>
+
+      <div style="flex:1"></div>
+      <div style="font-size:12px;color:var(--muted);text-align:center;padding:8px">© 2025</div>
+    </aside>
+
+    <main class="content">
+      <div class="card">
+        <h1>Welcome to your stylish site</h1>
+        <p class="lead">This page replaces the plain sidebar with a modern responsive design. Hover the left area to expand, click buttons to navigate.</p>
+
+        <h3>Quick start</h3>
+        <ul>
+          <li>Use the left sidebar to open your pages (Home / About / Services / Contact / Login).</li>
+          <li>The buttons expand on hover and grow in height when pressed.</li>
+          <li>Copy and customize colors or text to match your brand.</li>
+        </ul>
+
+        <h3 style="margin-top:18px">Customize</h3>
+        <p style="color:var(--muted)">Change the accent colors at the top of the file, adjust sizes, or replace the icons with images.</p>
+
+        <footer>Need more changes? Ask me to adjust colors, spacings, or animation timing.</footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
